@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { AlignCenter, ArrowRight, Github, Linkedin, Mail, Twitter } from "lucide-react"
+import { ArrowRight, Github, Linkedin, Mail, Twitter } from "lucide-react"
 
 import { Button } from "../components/ui/button"
 import { ProjectCard } from "@/components/project-card"
@@ -9,11 +9,11 @@ import { Education } from "@/components/education"
 import { ContactForm } from "../components/contact-form"
 import { CreativeHero } from "@/components/creative-hero"
 import { FloatingNav } from "@/components/floating-nav"
-import { MouseFollower } from "@/components/mouse-follower"
+// import { MouseFollower } from "@/components/mouse-follower"
 import { ScrollProgress } from "@/components/scroll-progress"
 import { SectionHeading } from "@/components/section-heading"
 import { GlassmorphicCard } from "@/components/glassmorphic-card"
-import { HeartFilledIcon } from "@radix-ui/react-icons"
+// import { HeartFilledIcon } from "@radix-ui/react-icons"
 
 export default function Portfolio() {
   return (
@@ -39,7 +39,7 @@ export default function Portfolio() {
               </div>
             </div>
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
-              <span className="block">Hi, I'm</span>
+              <span className="block">Hi, I&apos;m</span>
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">
                Solomon Rubanga Kene 
               </span>
@@ -148,8 +148,8 @@ export default function Portfolio() {
             <div className="space-y-6">
               <GlassmorphicCard>
                 <p className="text-lg text-zinc-300">
-                  I'm a passionate software Developer with experience building web applications and digital products. I
-                  have acqired skills in frontend development with React and Next.js, backend technologies such as Django and php.
+                  I&apos;m a passionate software Developer with experience building web applications and digital products. I
+                  have acqired skills in frontend development with React and Next.js, backend technologies such as Django and PHP.
                   I am also proficient in Mobile Application Devlopment using Flutter and Firebase
                 </p>
                 <p className="text-lg text-zinc-300 mt-4">
@@ -157,7 +157,7 @@ export default function Portfolio() {
                   projects and this has solidfied my skills and confidence.
                 </p>
                 <p className="text-lg text-zinc-300 mt-4">
-                  I'm always exploring new technologies to cope up with the ever evolving digital ecosystem to improve on my 
+                  I&apos;m always exploring new technologies to cope up with the ever evolving digital ecosystem to improve on my 
                   professional competencies.
                 </p>
 

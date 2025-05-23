@@ -107,7 +107,7 @@ export function CreativeHero() {
 
     // Create particle grid
     const particlesArray: Particle[] = []
-    const particleCount = 1000
+    // const particleCount = 1000
     const gridSize = 30
 
     function init() {
