@@ -1,8 +1,7 @@
 "use client"
 
-import type React from "react"
-
-import { useState } from "react"
+import React, { useEffect, useState } from "react"
+import { useForm, ValidationError } from "@formspree/react"
 import { motion } from "framer-motion"
 import { Send } from "lucide-react"
 
@@ -13,23 +12,36 @@ import { useToast } from "../hooks/use-toast"
 
 export function ContactForm() {
   const { toast } = useToast()
-  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [state, handleSubmit] = useForm("xbloebnk") // Replace with your Formspree form ID
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    setIsSubmitting(true)
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  })
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500))
-
-    toast({
-      title: "Message sent!",
-      description: "Thanks for reaching out. I'll get back to you soon.",
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
     })
-
-    setIsSubmitting(false)
-    e.currentTarget.reset()
   }
+
+  useEffect(() => {
+    if (state.succeeded) {
+      toast({
+        title: "Message sent!",
+        description: "Thanks for reaching out. I'll get back to you soon.",
+      })
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      })
+    }
+  }, [state.succeeded, toast])
 
   return (
     <motion.div
@@ -47,40 +59,54 @@ export function ContactForm() {
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="space-y-2">
               <Input
+                name="name"
                 placeholder="Your Name"
                 required
+                value={formData.name}
+                onChange={handleChange}
                 className="bg-zinc-900/50 border-zinc-700 focus:border-purple-500 focus:ring-purple-500/20"
               />
             </div>
             <div className="space-y-2">
               <Input
+                name="email"
                 type="email"
                 placeholder="Your Email"
                 required
+                value={formData.email}
+                onChange={handleChange}
                 className="bg-zinc-900/50 border-zinc-700 focus:border-purple-500 focus:ring-purple-500/20"
               />
+              <ValidationError prefix="Email" field="email" errors={state.errors} />
             </div>
             <div className="space-y-2">
               <Input
+                name="subject"
                 placeholder="Subject"
                 required
+                value={formData.subject}
+                onChange={handleChange}
                 className="bg-zinc-900/50 border-zinc-700 focus:border-purple-500 focus:ring-purple-500/20"
               />
             </div>
             <div className="space-y-2">
               <Textarea
+                name="message"
                 placeholder="Your Message"
                 rows={5}
                 required
+                value={formData.message}
+                onChange={handleChange}
                 className="bg-zinc-900/50 border-zinc-700 focus:border-purple-500 focus:ring-purple-500/20"
               />
+              <ValidationError prefix="Message" field="message" errors={state.errors} />
             </div>
             <Button
               type="submit"
               className="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-pink-500 hover:to-purple-500 border-0"
-              disabled={isSubmitting}
+              disabled={state.submitting}
             >
-              {isSubmitting ? (
+              {state.submitting ? (
                 <>Sending...</>
               ) : (
                 <>

@@ -48,18 +48,22 @@ export default function Portfolio() {
               I craft exceptional digital experiences with code, creativity, and a passion for innovation.
             </p>
             <div className="flex flex-wrap gap-4 pt-4">
+              <a href="#projects">
               <Button className="relative overflow-hidden group bg-gradient-to-r from-purple-500 to-pink-500 border-0">
                 <span className="relative z-10 flex items-center">
                   View Projects <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </span>
                 <span className="absolute inset-0 bg-gradient-to-r from-pink-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity"></span>
               </Button>
+              </a>
+              <a href="#contact">
               <Button
                 variant="outline"
                 className="border-zinc-700 text-zinc-300 hover:text-white hover:border-zinc-500"
               >
                 Contact Me
               </Button>
+              </a>
             </div>
             <div className="flex gap-4 pt-4">
               <Link href="https://github.com/rubanga-kene" target="_blank" rel="noopener noreferrer">
@@ -181,7 +185,9 @@ export default function Portfolio() {
                 </div>
 
                 <div className="mt-8">
+                  <a href="/downloads/solomon-cv.pdf" download>
                   <Button className="bg-zinc-800 hover:bg-zinc-700 text-white">Download Resume</Button>
+                  </a>
                 </div>
               </GlassmorphicCard>
             </div>
@@ -232,7 +238,7 @@ export default function Portfolio() {
               tags={["Flutter", "Dart", "Firebase",]}
               image="images/support-app.png?height=400&width=600"
               demoUrl="#"
-              repoUrl="#"
+              repoUrl="https://github.com/rubanga-kene/student-support-app.git"
             />
             <ProjectCard
               title="Student Assessment System"
@@ -240,7 +246,7 @@ export default function Portfolio() {
               tags={["HTML", "CSS", "JavaScript", "PHP", "MySQL"]}
               image="images/student-report.png?height=400&width=600"
               demoUrl="#"
-              repoUrl="#"
+              repoUrl="https://github.com/rubanga-kene/Assessment-Reports-Mgt-System.git"
             />
             <ProjectCard
               title="Information Sharing System"
@@ -248,14 +254,14 @@ export default function Portfolio() {
               tags={["HTML", "CSS", "JavaScript", "PHP", "MySQL"]}
               image="images/ieee.png?height=400&width=600"
               demoUrl="#"
-              repoUrl="#"
+              repoUrl="https://github.com/rubanga-kene/Infromation-Sharing-System.git"
             />
             <ProjectCard
               title="SMS Message Application"
               description="An SMS platform for sending messages to clients and relevant stakeholders."
               tags={["React ", "NextJS", "Tailwind CSS", "TypeScript", "MongoDB"]}
               image="images/message-app.png?height=400&width=600"
-              demoUrl="#"
+              demoUrl="https://sms-platform-solomon.vercel.app/"
               repoUrl="#"
             />
             <ProjectCard
@@ -263,7 +269,7 @@ export default function Portfolio() {
               description="A beautiful website for dealflow company for several business purposes."
               tags={["React", "NextJS", "TypeScript", "Tailwind CSS"]}
               image="images/dealflow.png?height=400&width=600"
-              demoUrl="#"
+              demoUrl="https://dealflow-website.netlify.app/"
               repoUrl="#"
             />
             <ProjectCard
@@ -271,8 +277,8 @@ export default function Portfolio() {
               description="This portfolio website built with Next.js and Tailwind CSS."
               tags={["Next.js", "Tailwind CSS", "Framer Motion", "TypeScript"]}
               image="images/portfolio.png?height=400&width=600"
-              demoUrl="#"
-              repoUrl="#"
+              demoUrl="https://rubangakene-solomon.vercel.app/"
+              repoUrl="https://github.com/rubanga-kene/personal-portfolio.git"
             />
           </div>
         </div>
@@ -330,7 +336,7 @@ export default function Portfolio() {
                   </div>
                   <div>
                     <div className="text-sm text-zinc-500">Email</div>
-                    <div className="font-medium">rubangakene20@gmail.com</div>
+                    <div className="font-medium"><a href="mailto:rubangakene20@gmail.com">rubangakene20@gmail.com</a></div>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
@@ -339,7 +345,11 @@ export default function Portfolio() {
                   </div>
                   <div>
                     <div className="text-sm text-zinc-500">LinkedIn</div>
-                    <div className="font-medium">linkedin.com/in/rubangakenesolomon</div>
+                    <div className="font-medium">
+                      <a href="https://linkedin.com/in/rubangakenesolomon"  target="_blank" rel="noopener noreferrer">
+                      linkedin.com/in/rubangakenesolomon
+                      </a>
+                    </div>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
@@ -348,8 +358,12 @@ export default function Portfolio() {
                   </div>
                   <div>
                     <div className="text-sm text-zinc-500">GitHub</div>
-                    <div className="font-medium">github.com/rubanga-kene</div>
-                  </div>
+                    <div className="font-medium">
+                      <a href="https://github.com/rubanga-kene/" target="_blank" rel="noopener noreferrer">
+                      github.com/rubanga-kene
+                      </a>
+                    </div>
+                  </div> 
                 </div>
               </div>
 
