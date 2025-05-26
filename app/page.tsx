@@ -245,7 +245,7 @@ export default function Portfolio() {
               description="A platform that schools can use to assess the performance of their students, make report cards among others."
               tags={["HTML", "CSS", "JavaScript", "PHP", "MySQL"]}
               image="images/student-report.png?height=400&width=600"
-              demoUrl="#"
+              demoUrl="https://student-report.great-site.net/"
               repoUrl="https://github.com/rubanga-kene/Assessment-Reports-Mgt-System.git"
             />
             <ProjectCard
