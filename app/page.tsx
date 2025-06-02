@@ -233,6 +233,14 @@ export default function Portfolio() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
             <ProjectCard
+              title="DevsHub"
+              description="An online platform where devlopers share matters on topics of common interest."
+              tags={["Django ", "Python", "HTM/CSS", "JavaScript", "PostgreSQL"]}
+              image="images/devshub.png?height=400&width=600"
+              demoUrl="https://devshub-ma3a.onrender.com/"
+              repoUrl="https://github.com/rubanga-kene/devshub.git"
+            />
+            <ProjectCard
               title="Student Support Application"
               description="An online platform where students can obtain support from the different university departments."
               tags={["Flutter", "Dart", "Firebase",]}
@@ -248,22 +256,8 @@ export default function Portfolio() {
               demoUrl="https://student-report.great-site.net/"
               repoUrl="https://github.com/rubanga-kene/Assessment-Reports-Mgt-System.git"
             />
-            <ProjectCard
-              title="Information Sharing System"
-              description="An information sharing platform for the IEEE students Community of Busitema University"
-              tags={["HTML", "CSS", "JavaScript", "PHP", "MySQL"]}
-              image="images/ieee.png?height=400&width=600"
-              demoUrl="#"
-              repoUrl="https://github.com/rubanga-kene/Infromation-Sharing-System.git"
-            />
-            <ProjectCard
-              title="SMS Message Application"
-              description="An SMS platform for sending messages to clients and relevant stakeholders."
-              tags={["React ", "NextJS", "Tailwind CSS", "TypeScript", "MongoDB"]}
-              image="images/message-app.png?height=400&width=600"
-              demoUrl="https://sms-platform-solomon.vercel.app/"
-              repoUrl="#"
-            />
+            
+            
             <ProjectCard
               title="DealFlow Website"
               description="A beautiful website for dealflow company for several business purposes."
@@ -279,6 +273,14 @@ export default function Portfolio() {
               image="images/portfolio.png?height=400&width=600"
               demoUrl="https://rubangakene-solomon.vercel.app/"
               repoUrl="https://github.com/rubanga-kene/personal-portfolio.git"
+            />
+            <ProjectCard
+              title="Information Sharing System"
+              description="An information sharing platform for the IEEE students Community of Busitema University"
+              tags={["HTML", "CSS", "JavaScript", "PHP", "MySQL"]}
+              image="images/ieee.png?height=400&width=600"
+              demoUrl="#"
+              repoUrl="https://github.com/rubanga-kene/Infromation-Sharing-System.git"
             />
           </div>
         </div>
