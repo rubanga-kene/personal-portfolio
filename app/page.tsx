@@ -237,7 +237,7 @@ export default function Portfolio() {
               description="An online platform where devlopers share matters on topics of common interest."
               tags={["Django ", "Python", "HTM/CSS", "JavaScript", "PostgreSQL"]}
               image="images/devshub.png?height=400&width=600"
-              demoUrl="https://devshub-ma3a.onrender.com/"
+              demoUrl="https://devshub.up.railway.app/"
               repoUrl="https://github.com/rubanga-kene/devshub.git"
             />
             <ProjectCard
