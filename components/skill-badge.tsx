@@ -1,13 +1,18 @@
 "use client"
 
 import { motion } from "framer-motion"
+// import { icons } from "lucide-react"
+// import { Icon } from "next/dist/lib/metadata/types/metadata-types"
+// import { ReactNode } from "react"
+
 
 interface SkillBadgeProps {
-  name: string
+  iconPath: string
+  // name: string
   level: number
 }
 
-export function SkillBadge({ name, level }: SkillBadgeProps) {
+export function SkillBadge({level, iconPath }: SkillBadgeProps) {
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.9 }}
@@ -18,11 +23,13 @@ export function SkillBadge({ name, level }: SkillBadgeProps) {
     >
       <div className="relative overflow-hidden rounded-xl bg-zinc-800/50 backdrop-blur-sm border border-zinc-700/50 p-6 h-full transition-all duration-300 hover:border-purple-500/50">
         <div className="absolute -inset-1 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-xl blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
-
+        <div className="flex justify-center mb-2 text-xl text-purple-400">
+          <img src={iconPath} alt={`icon`} className="icon" />
+        </div>
         <div className="relative">
-          <div className="text-center mb-4 font-medium text-lg">{name}</div>
+          {/* <div className="text-center mb-4 font-medium text-lg">{name}</div> */}
 
-          <div className="relative h-2.5 w-full bg-zinc-700 rounded-full overflow-hidden">
+          <div className="relative h-2 w-full bg-zinc-700 rounded-full overflow-hidden">
             <motion.div
               className="absolute top-0 left-0 h-full bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"
               initial={{ width: 0 }}

@@ -1,18 +1,18 @@
-import Link from "next/link"
-import { ArrowRight, Github, Linkedin, Mail, Twitter } from "lucide-react"
+import Link from "next/link";
+import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
 
-import { Button } from "../components/ui/button"
-import { ProjectCard } from "@/components/project-card"
-import { SkillBadge } from "@/components/skill-badge"
-import { Timeline } from "@/components/timeline"
-import { Education } from "@/components/education"
-import { ContactForm } from "../components/contact-form"
-import { CreativeHero } from "@/components/creative-hero"
-import { FloatingNav } from "@/components/floating-nav"
+import { Button } from "../components/ui/button";
+import { ProjectCard } from "@/components/project-card";
+import { SkillBadge } from "@/components/skill-badge";
+import { Timeline } from "@/components/timeline";
+import { Education } from "@/components/education";
+import { ContactForm } from "../components/contact-form";
+import { CreativeHero } from "@/components/creative-hero";
+import { FloatingNav } from "@/components/floating-nav";
 // import { MouseFollower } from "@/components/mouse-follower"
-import { ScrollProgress } from "@/components/scroll-progress"
-import { SectionHeading } from "@/components/section-heading"
-import { GlassmorphicCard } from "@/components/glassmorphic-card"
+import { ScrollProgress } from "@/components/scroll-progress";
+import { SectionHeading } from "@/components/section-heading";
+import { GlassmorphicCard } from "@/components/glassmorphic-card";
 // import { HeartFilledIcon } from "@radix-ui/react-icons"
 
 export default function Portfolio() {
@@ -34,73 +34,84 @@ export default function Portfolio() {
           <div className="space-y-6">
             <div className="inline-block">
               <div className="relative px-3 py-1 text-sm font-medium rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-4">
-                <span className="relative z-10">Software Developer And Creative Inovator</span>
+                <span className="relative z-10">
+                  Software Developer And Creative Inovator
+                </span>
                 <span className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 animate-pulse"></span>
               </div>
             </div>
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
               <span className="block">Hi, I&apos;m</span>
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">
-               Solomon Rubanga Kene 
+                Solomon Rubanga Kene
               </span>
             </h1>
-            <p className="text-xl text-zinc-400 max-w-[600px]">
-              I craft exceptional digital experiences with code, creativity, and a passion for innovation.
+            <p className="text-xl text-white-400 max-w-[600px]">
+              I craft exceptional digital experiences with code, creativity, and
+              a passion for innovation.
             </p>
             <div className="flex flex-wrap gap-4 pt-4">
               <a href="#projects">
-              <Button className="relative overflow-hidden group bg-gradient-to-r from-purple-500 to-pink-500 border-0">
-                <span className="relative z-10 flex items-center">
-                  View Projects <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </span>
-                <span className="absolute inset-0 bg-gradient-to-r from-pink-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity"></span>
-              </Button>
+                <Button className="relative overflow-hidden group bg-gradient-to-r from-purple-500 to-pink-500 border-0">
+                  <span className="relative z-10 flex items-center">
+                    View Projects{" "}
+                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </span>
+                  <span className="absolute inset-0 bg-gradient-to-r from-pink-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                </Button>
+              </a>
+              <a href="/downloads/solomon-cv.pdf" download>
+                <Button
+                  size="sm"
+                  className="ml-2 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-pink-500 hover:to-purple-500 border-0"
+                >
+                  Download Resume
+                </Button>
               </a>
               <a href="#contact">
-              <Button
-                variant="outline"
-                className="border-zinc-700 text-zinc-300 hover:text-white hover:border-zinc-500"
-              >
-                Contact Me
-              </Button>
+                <Button
+                  variant="outline"
+                  className="border-zinc-700 text-zinc-300 hover:text-white hover:border-zinc-500"
+                >
+                  Contact Me
+                </Button>
               </a>
             </div>
             <div className="flex gap-4 pt-4">
-              <Link href="https://github.com/rubanga-kene" target="_blank" rel="noopener noreferrer">
+              <Link
+                href="https://github.com/rubanga-kene"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="rounded-full bg-zinc-800/50 hover:bg-zinc-800 text-zinc-400 hover:text-white"
+                  className="rounded-full bg-zinc-600/50 hover:bg-zinc-800 text-zinc-400 hover:text-white"
                 >
                   <Github className="h-5 w-5" />
                   <span className="sr-only">GitHub</span>
                 </Button>
               </Link>
-              <Link href="https://www.linkedin.com/in/rubangakenesolomon/" target="_blank" rel="noopener noreferrer">
+              <Link
+                href="https://www.linkedin.com/in/rubangakenesolomon/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="rounded-full bg-zinc-800/50 hover:bg-zinc-800 text-zinc-400 hover:text-white"
+                  className="rounded-full bg-zinc-600/50 hover:bg-zinc-800 text-zinc-400 hover:text-white"
                 >
                   <Linkedin className="h-5 w-5" />
                   <span className="sr-only">LinkedIn</span>
                 </Button>
               </Link>
-              <Link href="#" target="_blank" rel="noopener noreferrer">
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="rounded-full bg-zinc-800/50 hover:bg-zinc-800 text-zinc-400 hover:text-white"
-                >
-                  <Twitter className="h-5 w-5" />
-                  <span className="sr-only">Twitter</span>
-                </Button>
-              </Link>
+              
               <Link href="mailto:rubangakene20@gmail.com">
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="rounded-full bg-zinc-800/50 hover:bg-zinc-800 text-zinc-400 hover:text-white"
+                  className="rounded-full bg-zinc-600/50 hover:bg-zinc-800 text-zinc-400 hover:text-white"
                 >
                   <Mail className="h-5 w-5" />
                   <span className="sr-only">Email</span>
@@ -128,7 +139,10 @@ export default function Portfolio() {
         </div>
 
         <div className="container relative z-10">
-          <SectionHeading title="About Me" subtitle="My Background And Journey" />
+          <SectionHeading
+            title="About Me"
+            subtitle="My Background And Journey"
+          />
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mt-16">
             <div className="relative">
@@ -143,53 +157,69 @@ export default function Portfolio() {
                 <div className="absolute bottom-0 left-0 w-full p-6">
                   <div className="flex items-center gap-2">
                     <div className="w-3 h-3 rounded-full bg-green-500 animate-pulse"></div>
-                    <span className="text-sm font-medium">Available for work</span>
+                    <span className="text-sm font-medium">
+                      Available for work
+                    </span>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="space-y-6">
-              <GlassmorphicCard>
-                <p className="text-lg text-zinc-300">
-                  I&apos;m a passionate software Developer with experience building web applications and digital products. I
-                  have acqired skills in frontend development with React and Next.js, backend technologies such as Django and PHP.
-                  I am also proficient in Mobile Application Devlopment using Flutter and Firebase
-                </p>
-                <p className="text-lg text-zinc-300 mt-4">
-                  My journey in tech started with a strong foundation in software development. I have worked on various
-                  projects and this has solidfied my skills and confidence.
-                </p>
-                <p className="text-lg text-zinc-300 mt-4">
-                  I&apos;m always exploring new technologies to cope up with the ever evolving digital ecosystem to improve on my 
-                  professional competencies.
-                </p>
+            <div className="space-y-6 about bg-slate-50">
+              <p className="text-lg text-slate-800">
+                I&apos;m a passionate software Developer with experience
+                building web applications and digital products. I have acqired
+                skills in frontend development with React and Next.js, backend
+                technologies such as Django and PHP. I am also proficient in
+                Mobile Application Devlopment using Flutter and Firebase
+              </p>
+              <p className="text-lg text-slate-800 mt-4">
+                My journey in tech started with a strong foundation in software
+                development. I have worked on various projects and this has
+                solidfied my skills and confidence.
+              </p>
+              <p className="text-lg text-slate-800 mt-4">
+                I&apos;m always exploring new technologies to cope up with the
+                ever evolving digital ecosystem to improve on my professional
+                competencies.
+              </p>
 
-                <div className="grid grid-cols-2 gap-4 mt-8">
-                  <div className="space-y-1">
-                    <div className="text-sm text-zinc-500">Name</div>
-                    <div className="font-medium">Rubanga Kene Solomon</div>
-                  </div>
-                  <div className="space-y-1">
-                    <div className="text-sm text-zinc-500">Email</div>
-                    <div className="font-medium">rubangakene20@gmail.com</div>
-                  </div>
-                  <div className="space-y-1">
-                    <div className="text-sm text-zinc-500">Location</div>
-                    <div className="font-medium">Kampala - Uganda</div>
-                  </div>
-                  <div className="space-y-1">
-                    <div className="text-sm text-zinc-500">Availability</div>
-                    <div className="font-medium text-green-500">Open to opportunities</div>
+              <div className="grid grid-cols-2 gap-4 mt-8">
+                <div className="space-y-1">
+                  <div className="text-sm text-slate-600">Name</div>
+                  <div className="font-medium text-gray-800">
+                    Rubanga Kene Solomon
                   </div>
                 </div>
-
-                <div className="mt-8">
-                  <a href="/downloads/solomon-cv.pdf" download>
-                  <Button className="bg-zinc-800 hover:bg-zinc-700 text-white">Download Resume</Button>
-                  </a>
+                <div className="space-y-1">
+                  <div className="text-sm text-slate-600">Email</div>
+                  <div className="font-medium text-blue-600">
+                    <a href="mailto:rubangakene20@gmail.com">
+                      rubangakene20@gmail.com
+                    </a>
+                  </div>
                 </div>
-              </GlassmorphicCard>
+                <div className="space-y-1">
+                  <div className="text-sm text-slate-600">Location</div>
+                  <div className="font-medium text-gray-800">
+                    Kampala - Uganda
+                  </div>
+                </div>
+                <div className="space-y-1">
+                  <div className="text-sm text-gray-800">Availability</div>
+                  <div className="font-medium text-green-700">
+                    Open to opportunities
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-8">
+                <a href="/downloads/solomon-cv.pdf" download>
+                  <Button className="bg-zinc-800 hover:bg-zinc-700 text-white">
+                    Download Resume
+                  </Button>
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -203,20 +233,24 @@ export default function Portfolio() {
         </div>
 
         <div className="container relative z-10">
-          <SectionHeading title="My Skills" subtitle="Technologies I Work With" />
+          <SectionHeading
+            title="My Skills"
+            subtitle="Technologies I Work With"
+          />
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-16">
-            <SkillBadge name="Python" level={90} />
-            <SkillBadge name="Django" level={85} />
-            <SkillBadge name="React" level={95} />
-            <SkillBadge name="Next.js" level={90} />
-            <SkillBadge name="HTML/CSS" level={95} />
-            <SkillBadge name="Tailwind CSS" level={90} />
-            <SkillBadge name="PHP" level={85} />
-            <SkillBadge name="MySQL" level={90} />
-            <SkillBadge name="MongoDB" level={80} />
-            <SkillBadge name="Flutter" level={80} />
-            <SkillBadge name="Git" level={85} />
+            <SkillBadge level={90} iconPath="/icons/python.svg" />
+            <SkillBadge level={85} iconPath="/icons/django.svg" />
+            <SkillBadge level={95} iconPath="/icons/react.svg" />
+            <SkillBadge level={90} iconPath="/icons/nextjs.svg" />
+            <SkillBadge level={95} iconPath="/icons/html.svg" />
+            <SkillBadge level={90} iconPath="/icons/js.svg" />
+            <SkillBadge level={90} iconPath="/icons/tailwind.svg" />
+            <SkillBadge level={85} iconPath="/icons/php.svg" />
+            <SkillBadge level={90} iconPath="/icons/mysql.svg" />
+            <SkillBadge level={80} iconPath="/icons/mongodb.svg" />
+            <SkillBadge level={80} iconPath="/icons/flutter.svg" />
+            <SkillBadge level={85} iconPath="/icons/git.svg" />
           </div>
         </div>
       </section>
@@ -229,13 +263,22 @@ export default function Portfolio() {
         </div>
 
         <div className="container relative z-10">
-          <SectionHeading title="Featured Projects" subtitle="Some of My Recent Work" />
+          <SectionHeading
+            title="Featured Projects"
+            subtitle="Some of My Recent Work"
+          />
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
             <ProjectCard
               title="DevsHub"
               description="An online platform where devlopers share matters on topics of common interest."
-              tags={["Django ", "Python", "HTM/CSS", "JavaScript", "PostgreSQL"]}
+              tags={[
+                "Django ",
+                "Python",
+                "HTM/CSS",
+                "JavaScript",
+                "PostgreSQL",
+              ]}
               image="images/devshub.png?height=400&width=600"
               demoUrl="https://devshub.up.railway.app/"
               repoUrl="https://github.com/rubanga-kene/devshub.git"
@@ -243,7 +286,7 @@ export default function Portfolio() {
             <ProjectCard
               title="Student Support Application"
               description="An online platform where students can obtain support from the different university departments."
-              tags={["Flutter", "Dart", "Firebase",]}
+              tags={["Flutter", "Dart", "Firebase"]}
               image="images/support-app.png?height=400&width=600"
               demoUrl="#"
               repoUrl="https://github.com/rubanga-kene/student-support-app.git"
@@ -256,8 +299,7 @@ export default function Portfolio() {
               demoUrl="https://student-report.great-site.net/"
               repoUrl="https://github.com/rubanga-kene/Assessment-Reports-Mgt-System.git"
             />
-            
-            
+
             <ProjectCard
               title="DealFlow Website"
               description="A beautiful website for dealflow company for several business purposes."
@@ -294,7 +336,10 @@ export default function Portfolio() {
         </div>
 
         <div className="container relative z-10">
-          <SectionHeading title="Work Experience" subtitle="My Professional Journey" />
+          <SectionHeading
+            title="Work Experience"
+            subtitle="My Professional Journey"
+          />
 
           <div className="mt-16">
             <Timeline />
@@ -310,7 +355,10 @@ export default function Portfolio() {
         </div>
 
         <div className="container relative z-10">
-          <SectionHeading title="Education Experience" subtitle="My Education Journey" />
+          <SectionHeading
+            title="Education Experience"
+            subtitle="My Education Journey"
+          />
 
           <div className="mt-16">
             <Education />
@@ -338,7 +386,11 @@ export default function Portfolio() {
                   </div>
                   <div>
                     <div className="text-sm text-zinc-500">Email</div>
-                    <div className="font-medium"><a href="mailto:rubangakene20@gmail.com">rubangakene20@gmail.com</a></div>
+                    <div className="font-medium">
+                      <a className="text-gray-300 hover:text-zinc-100" href="mailto:rubangakene20@gmail.com">
+                        rubangakene20@gmail.com
+                      </a>
+                    </div>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
@@ -348,8 +400,12 @@ export default function Portfolio() {
                   <div>
                     <div className="text-sm text-zinc-500">LinkedIn</div>
                     <div className="font-medium">
-                      <a href="https://linkedin.com/in/rubangakenesolomon"  target="_blank" rel="noopener noreferrer">
-                      linkedin.com/in/rubangakenesolomon
+                      <a className="text-gray-300 hover:text-zinc-100"
+                        href="https://linkedin.com/in/rubangakenesolomon"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        linkedin.com/in/rubangakenesolomon
                       </a>
                     </div>
                   </div>
@@ -361,11 +417,15 @@ export default function Portfolio() {
                   <div>
                     <div className="text-sm text-zinc-500">GitHub</div>
                     <div className="font-medium">
-                      <a href="https://github.com/rubanga-kene/" target="_blank" rel="noopener noreferrer">
-                      github.com/rubanga-kene
+                      <a className="text-gray-300 hover:text-zinc-100"
+                        href="https://github.com/rubanga-kene/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        github.com/rubanga-kene
                       </a>
                     </div>
-                  </div> 
+                  </div>
                 </div>
               </div>
 
@@ -373,7 +433,9 @@ export default function Portfolio() {
                 <h4 className="text-lg font-medium mb-4">Current Status</h4>
                 <div className="flex items-center gap-2">
                   <div className="w-3 h-3 rounded-full bg-green-500 animate-pulse"></div>
-                  <span>Available for freelance work and full-time opportunities</span>
+                  <span>
+                    Available for freelance work and full-time opportunities
+                  </span>
                 </div>
               </div>
             </GlassmorphicCard>
@@ -389,19 +451,24 @@ export default function Portfolio() {
           <div>
             <Link href="/" className="font-bold text-xl mb-3l">
               <img
-                  width={80}
-                  height={80}
-                  src="images/my-logo.png"
-                  alt="Rubanga Kene Solomon"
-                  // className="w-full h-full object-cover"
-                />
+                width={80}
+                height={80}
+                src="images/my-logo.png"
+                alt="Rubanga Kene Solomon"
+                // className="w-full h-full object-cover"
+              />
             </Link>
             <p className="text-sm text-zinc-500 mt-2">
-              © {new Date().getFullYear()} Rubanga Kene Solomon. All rights reserved.
+              © {new Date().getFullYear()} Rubanga Kene Solomon. All rights
+              reserved.
             </p>
           </div>
           <div className="flex gap-4">
-            <Link href="https://github.com/rubanga-kene" target="_blank" rel="noopener noreferrer">
+            <Link
+              href="https://github.com/rubanga-kene"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Button
                 variant="ghost"
                 size="icon"
@@ -411,7 +478,11 @@ export default function Portfolio() {
                 <span className="sr-only">GitHub</span>
               </Button>
             </Link>
-            <Link href="https://www.linkedin.com/in/rubangakenesolomon/" target="_blank" rel="noopener noreferrer">
+            <Link
+              href="https://www.linkedin.com/in/rubangakenesolomon/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Button
                 variant="ghost"
                 size="icon"
@@ -421,16 +492,7 @@ export default function Portfolio() {
                 <span className="sr-only">LinkedIn</span>
               </Button>
             </Link>
-            <Link href="#" target="_blank" rel="noopener noreferrer">
-              <Button
-                variant="ghost"
-                size="icon"
-                className="rounded-full bg-zinc-800/50 hover:bg-zinc-800 text-zinc-400 hover:text-white"
-              >
-                <Twitter className="h-5 w-5" />
-                <span className="sr-only">Twitter</span>
-              </Button>
-            </Link>
+            
             <Link href="mailto:rubangakene20@gmail.com">
               <Button
                 variant="ghost"
@@ -445,5 +507,5 @@ export default function Portfolio() {
         </div>
       </footer>
     </div>
-  )
+  );
 }
