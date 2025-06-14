@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
 
 import { Button } from "../components/ui/button";
@@ -9,16 +10,16 @@ import { Education } from "@/components/education";
 import { ContactForm } from "../components/contact-form";
 import { CreativeHero } from "@/components/creative-hero";
 import { FloatingNav } from "@/components/floating-nav";
-// import { MouseFollower } from "@/components/mouse-follower"
 import { ScrollProgress } from "@/components/scroll-progress";
 import { SectionHeading } from "@/components/section-heading";
 import { GlassmorphicCard } from "@/components/glassmorphic-card";
-// import { HeartFilledIcon } from "@radix-ui/react-icons"
+
 
 export default function Portfolio() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-zinc-900 via-zinc-900 to-black text-white overflow-hidden">
-      {/* <MouseFollower /> */}
+     
+    
       <ScrollProgress />
       <FloatingNav />
 
@@ -119,7 +120,7 @@ export default function Portfolio() {
               </Link>
             </div>
           </div>
-          <div className="flex justify-center">
+          <div className=" hidden lg:block justify-center ">
             <CreativeHero />
           </div>
         </div>
@@ -148,8 +149,11 @@ export default function Portfolio() {
             <div className="relative">
               <div className="absolute -inset-4 rounded-xl bg-gradient-to-r from-purple-500/20 to-pink-500/20 blur-xl opacity-70"></div>
               <div className="relative aspect-square rounded-xl overflow-hidden border border-zinc-800">
-                <img
-                  src="images/me.png?height=600&width=600"
+                
+                <Image
+                  src="/images/me.png"
+                  width={600}
+                  height={600}
                   alt="Rubanga Kene Solomon"
                   className="w-full h-full object-cover"
                 />
@@ -168,7 +172,7 @@ export default function Portfolio() {
             <div className="space-y-6 about bg-slate-50">
               <p className="text-lg text-slate-800">
                 I&apos;m a passionate software Developer with experience
-                building web applications and digital products. I have acqired
+                building web applications and digital products. I have acquired
                 skills in frontend development with React and Next.js, backend
                 technologies such as Django and PHP. I am also proficient in
                 Mobile Application Devlopment using Flutter and Firebase
@@ -239,18 +243,17 @@ export default function Portfolio() {
           />
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-16">
-            <SkillBadge level={90} iconPath="/icons/python.svg" />
-            <SkillBadge level={85} iconPath="/icons/django.svg" />
-            <SkillBadge level={95} iconPath="/icons/react.svg" />
-            <SkillBadge level={90} iconPath="/icons/nextjs.svg" />
-            <SkillBadge level={95} iconPath="/icons/html.svg" />
-            <SkillBadge level={90} iconPath="/icons/js.svg" />
-            <SkillBadge level={90} iconPath="/icons/tailwind.svg" />
+            <SkillBadge level={80} iconPath="/icons/python.svg" />
+            <SkillBadge level={75} iconPath="/icons/django.svg" />
+            <SkillBadge level={80} iconPath="/icons/react.svg" />
+            <SkillBadge level={80} iconPath="/icons/nextjs.svg" />
+            <SkillBadge level={80} iconPath="/icons/js.svg" />
+            <SkillBadge level={80} iconPath="/icons/tailwind.svg" />
             <SkillBadge level={85} iconPath="/icons/php.svg" />
-            <SkillBadge level={90} iconPath="/icons/mysql.svg" />
+            <SkillBadge level={85} iconPath="/icons/mysql.svg" />
             <SkillBadge level={80} iconPath="/icons/mongodb.svg" />
-            <SkillBadge level={80} iconPath="/icons/flutter.svg" />
-            <SkillBadge level={85} iconPath="/icons/git.svg" />
+            <SkillBadge level={70} iconPath="/icons/flutter.svg" />
+            <SkillBadge level={80} iconPath="/icons/git.svg" />
           </div>
         </div>
       </section>
@@ -279,7 +282,7 @@ export default function Portfolio() {
                 "JavaScript",
                 "PostgreSQL",
               ]}
-              image="images/devshub.png?height=400&width=600"
+              image="/images/devshub.png?height=400&width=600"
               demoUrl="https://devshub.up.railway.app/"
               repoUrl="https://github.com/rubanga-kene/devshub.git"
             />
@@ -287,7 +290,7 @@ export default function Portfolio() {
               title="Student Support Application"
               description="An online platform where students can obtain support from the different university departments."
               tags={["Flutter", "Dart", "Firebase"]}
-              image="images/support-app.png?height=400&width=600"
+              image="/images/support-app.png?height=400&width=600"
               demoUrl="#"
               repoUrl="https://github.com/rubanga-kene/student-support-app.git"
             />
@@ -295,7 +298,7 @@ export default function Portfolio() {
               title="Student Assessment System"
               description="A platform that schools can use to assess the performance of their students, make report cards among others."
               tags={["HTML", "CSS", "JavaScript", "PHP", "MySQL"]}
-              image="images/student-report.png?height=400&width=600"
+              image="/images/student-report.png?height=400&width=600"
               demoUrl="https://student-report.great-site.net/"
               repoUrl="https://github.com/rubanga-kene/Assessment-Reports-Mgt-System.git"
             />
@@ -304,7 +307,7 @@ export default function Portfolio() {
               title="DealFlow Website"
               description="A beautiful website for dealflow company for several business purposes."
               tags={["React", "NextJS", "TypeScript", "Tailwind CSS"]}
-              image="images/dealflow.png?height=400&width=600"
+              image="/images/dealflow.png?height=400&width=600"
               demoUrl="https://dealflow-website.netlify.app/"
               repoUrl="#"
             />
@@ -312,7 +315,7 @@ export default function Portfolio() {
               title="My Portfolio Website"
               description="This portfolio website built with Next.js and Tailwind CSS."
               tags={["Next.js", "Tailwind CSS", "Framer Motion", "TypeScript"]}
-              image="images/portfolio.png?height=400&width=600"
+              image="/images/portfolio.png?height=400&width=600"
               demoUrl="https://rubangakene-solomon.vercel.app/"
               repoUrl="https://github.com/rubanga-kene/personal-portfolio.git"
             />
@@ -320,7 +323,7 @@ export default function Portfolio() {
               title="Information Sharing System"
               description="An information sharing platform for the IEEE students Community of Busitema University"
               tags={["HTML", "CSS", "JavaScript", "PHP", "MySQL"]}
-              image="images/ieee.png?height=400&width=600"
+              image="/images/ieee.png?height=400&width=600"
               demoUrl="#"
               repoUrl="https://github.com/rubanga-kene/Infromation-Sharing-System.git"
             />
@@ -450,10 +453,10 @@ export default function Portfolio() {
         <div className="container flex flex-col md:flex-row justify-between items-center gap-6">
           <div>
             <Link href="/" className="font-bold text-xl mb-3l">
-              <img
+              <Image
                 width={80}
                 height={80}
-                src="images/my-logo.png"
+                src="/images/my-logo.png"
                 alt="Rubanga Kene Solomon"
                 // className="w-full h-full object-cover"
               />

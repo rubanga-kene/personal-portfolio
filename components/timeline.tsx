@@ -9,7 +9,7 @@ const experiences = [
     company: "Research and Education Network for Uganda, RENU",
     period: "June - August, 2024",
     description:
-      "Gained hands on skills in Networking, Linux Operating System, Server Management, System Adminnistration, BGP Flowspec.",
+      "Gained hands on skills in Network Operations, Linux Operating System, Server Management, System Adminnistration and BGP Flowspec.",
   },
   // {
   //   title: "Frontend Developer",

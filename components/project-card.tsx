@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { ArrowUpRight, Github } from "lucide-react"
 import { motion } from "framer-motion"
 
@@ -17,8 +18,29 @@ interface ProjectCardProps {
   repoUrl: string
 }
 
+
+
 export function ProjectCard({ title, description, tags, image, demoUrl, repoUrl }: ProjectCardProps) {
   const [isHovered, setIsHovered] = useState(false)
+
+  function showDemo(){
+    if(demoUrl !== '#'){
+      return (
+         <Button
+                size="sm"
+                className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-pink-500 hover:to-purple-500 border-0"
+                asChild
+              >
+                
+                <Link href={demoUrl} target="_blank" rel="noopener noreferrer">
+                  Live Demo
+                  <ArrowUpRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+      )
+    }
+  }
+  
 
   return (
     <motion.div
@@ -38,8 +60,10 @@ export function ProjectCard({ title, description, tags, image, demoUrl, repoUrl 
         <div className="relative h-full flex flex-col">
           <div className="relative overflow-hidden h-48">
             <div className="absolute inset-0 bg-gradient-to-b from-purple-500/20 to-pink-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"></div>
-            <img
+            <Image
               src={image || "/placeholder.svg"}
+              height={400}
+              width={600}
               alt={title}
               className={`w-full h-full object-cover transition-transform duration-700 ${isHovered ? "scale-110" : "scale-100"}`}
             />
@@ -64,16 +88,9 @@ export function ProjectCard({ title, description, tags, image, demoUrl, repoUrl 
                   Code
                 </Link>
               </Button>
-              <Button
-                size="sm"
-                className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-pink-500 hover:to-purple-500 border-0"
-                asChild
-              >
-                <Link href={demoUrl} target="_blank" rel="noopener noreferrer">
-                  Live Demo
-                  <ArrowUpRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
+              
+              {showDemo()}
+              
             </div>
           </div>
 

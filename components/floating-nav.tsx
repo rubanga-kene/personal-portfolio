@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { motion } from "framer-motion"
 import { Menu, X } from "lucide-react"
 
@@ -54,10 +55,10 @@ export function FloatingNav() {
           {isMobile ? (
             <div className="relative flex items-center justify-between">
               <Link href="/" className="font-bold text-lg">
-                <img
+                <Image
                   width={50}
                   height={50}
-                  src="images/my-logo.png"
+                  src="/images/my-logo.png"
                   alt="Rubanga Kene Solomon"
                   // className="w-full h-full object-cover"
                 />
@@ -74,10 +75,10 @@ export function FloatingNav() {
           ) : (
             <div className="relative flex items-center gap-1">
               <Link href="/" >
-                <img
+                <Image
                   width={50}
                   height={50}
-                  src="images/my-logo.png"
+                  src="/images/my-logo.png"
                   alt="Rubanga Kene Solomon"
                   // className="w-full h-full object-cover"
                 />
