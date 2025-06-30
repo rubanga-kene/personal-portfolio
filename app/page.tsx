@@ -61,7 +61,7 @@ export default function Portfolio() {
                   <span className="absolute inset-0 bg-gradient-to-r from-pink-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity"></span>
                 </Button>
               </a>
-              <a href="/downloads/CV.pdf" download>
+              <a href="/downloads/Rubanga-Kene-Solomon-CV.pdf" download>
                 <Button
                   size="sm"
                   className="ml-2 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-pink-500 hover:to-purple-500 border-0"
@@ -218,7 +218,7 @@ export default function Portfolio() {
               </div>
 
               <div className="mt-8">
-                <a href="/downloads/CV.pdf" download>
+                <a href="/downloads/Rubanga-Kene-Solomon-CV.pdf" download>
                   <Button className="bg-zinc-800 hover:bg-zinc-700 text-white">
                     Download Resume
                   </Button>

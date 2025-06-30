@@ -93,7 +93,7 @@ export function FloatingNav() {
                   {item.name}
                 </Link>
               ))}
-              <a href="/downloads/CV.pdf" download>
+              <a href="/downloads/Rubanga-Kene-Solomon-CV.pdf" download>
               <Button
                 size="sm"
                 className="ml-2 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-pink-500 hover:to-purple-500 border-0"
@@ -126,7 +126,7 @@ export function FloatingNav() {
                 {item.name}
               </Link>
             ))}
-            <a href="/downloads/CV.pdf" download>
+            <a href="/downloads/Rubanga-Kene-Solomon-CV.pdf" download>
             <Button className="mt-6 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-pink-500 hover:to-purple-500 border-0">
               Resume
             </Button>
