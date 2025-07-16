@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowRight, Github, Linkedin, Mail, Phone } from "lucide-react";
 
 import { Button } from "../components/ui/button";
 import { ProjectCard } from "@/components/project-card";
@@ -8,16 +8,17 @@ import { SkillBadge } from "@/components/skill-badge";
 import { Timeline } from "@/components/timeline";
 import { Education } from "@/components/education";
 import { ContactForm } from "../components/contact-form";
-import { CreativeHero } from "@/components/creative-hero";
+// import { CreativeHero } from "@/components/creative-hero";
 import { FloatingNav } from "@/components/floating-nav";
 import { ScrollProgress } from "@/components/scroll-progress";
 import { SectionHeading } from "@/components/section-heading";
 import { GlassmorphicCard } from "@/components/glassmorphic-card";
+import TerminalAnimation from "@/components/terminal-animation";
 
 
 export default function Portfolio() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-zinc-900 via-zinc-900 to-black text-white overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-b from-zinc-900 via-zinc-900 to-black text-white overflow-hidden px-4">
      
     
       <ScrollProgress />
@@ -121,13 +122,21 @@ export default function Portfolio() {
             </div>
           </div>
           <div className=" hidden lg:block justify-center ">
-            <CreativeHero />
-          </div>
-        </div>
-
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 rounded-full border-2 border-white/20 flex justify-center items-start p-1">
-            <div className="w-1.5 h-1.5 rounded-full bg-white/60 animate-pulse"></div>
+           <TerminalAnimation
+            name="Rubanga Kene Solomon"
+            title="Full Stack Developer"
+            location="Kampala, Uganda"
+            skills={["React, TypeScript, Node.js, Python, Django, PostgreSQL, and more"]}
+            github="github.com/rubanga-kene"
+            email="rubangakene20@gmail.com"
+            aboutMe="I craft exceptional digital experiences with code, creativity, and
+              a passion for innovation."
+            hobbies={["Reading", "Watching movies", "Playing football"]}
+            education={[
+              { degree: "B.Sc. Computer Science", institution: "Busitema University", year: "2022-2025" },
+            ]}
+          />
+            {/* <CreativeHero /> */}
           </div>
         </div>
       </section>
@@ -171,21 +180,19 @@ export default function Portfolio() {
 
             <div className="space-y-6 about bg-slate-50">
               <p className="text-lg text-slate-800">
-                I&apos;m a passionate software Developer with experience
-                building web applications and digital products. I have acquired
-                skills in frontend development with React and Next.js, backend
-                technologies such as Django and PHP. I am also proficient in
-                Mobile Application Devlopment using Flutter and Firebase
+                Adaptable and driven software developer with a strong academic background in 
+                Computer Science and hands-on experience in both frontend and 
+                backend web development.
               </p>
               <p className="text-lg text-slate-800 mt-4">
-                My journey in tech started with a strong foundation in software
-                development. I have worked on various projects and this has
-                solidfied my skills and confidence.
+                Skilled in problem-solving, time management, and collaboration, with a 
+                passion for applying technical knowledge to build innovative and effective 
+                solutions. 
+
               </p>
               <p className="text-lg text-slate-800 mt-4">
-                I&apos;m always exploring new technologies to cope up with the
-                ever evolving digital ecosystem to improve on my professional
-                competencies.
+                Thrives in team-oriented environments and is committed to contributing to 
+                organizational success with a strong work ethic and growth mindset.
               </p>
 
               <div className="grid grid-cols-2 gap-4 mt-8">
@@ -392,6 +399,19 @@ export default function Portfolio() {
                     <div className="font-medium">
                       <a className="text-gray-300 hover:text-zinc-100" href="mailto:rubangakene20@gmail.com">
                         rubangakene20@gmail.com
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full bg-zinc-800 flex items-center justify-center">
+                    <Phone className="h-5 w-5 text-purple-400" />
+                  </div>
+                  <div>
+                    <div className="text-sm text-zinc-500">Phone</div>
+                    <div className="font-medium">
+                      <a className="text-gray-300 hover:text-zinc-100" href="tel:+256780828358">
+                        +256 780 828358
                       </a>
                     </div>
                   </div>

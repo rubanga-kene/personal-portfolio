@@ -11,13 +11,6 @@ const experiences = [
     description:
       "Gained hands on skills in Network Operations, Linux Operating System, Server Management, System Adminnistration and BGP Flowspec.",
   },
-  // {
-  //   title: "Frontend Developer",
-  //   company: "Digital Solutions Co.",
-  //   period: "2019 - 2021",
-  //   description:
-  //     "Developed responsive web applications using React and TypeScript. Collaborated with designers and backend engineers to deliver high-quality products.",
-  // },
  
 ]
 
