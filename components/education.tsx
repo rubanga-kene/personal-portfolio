@@ -7,9 +7,9 @@ const academicAchievements = [
   {
     title: "Bachelor of Science in Computer Science",
     company: "Busitema University",
-    period: "2022 - Present",
+    period: "2022 - 2025",
     description:
-      "To be completed in May 2025.",
+      "Completed in May 2025.",
   },
   {
     title: "Uganda Advanced Certificate of Education",

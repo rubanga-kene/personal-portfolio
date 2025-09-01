@@ -259,7 +259,7 @@ export default function Portfolio() {
             <SkillBadge level={85} iconPath="/icons/php.svg" />
             <SkillBadge level={85} iconPath="/icons/mysql.svg" />
             <SkillBadge level={80} iconPath="/icons/mongodb.svg" />
-            <SkillBadge level={70} iconPath="/icons/flutter.svg" />
+            <SkillBadge level={80} iconPath="/icons/wordpress.svg" />
             <SkillBadge level={80} iconPath="/icons/git.svg" />
           </div>
         </div>
@@ -280,6 +280,15 @@ export default function Portfolio() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
             <ProjectCard
+              title="Business Management System"
+              description="An online web application for automating day to day business activities such as inventory
+              management, sales, reports and analytics"
+              tags={["Next.js", "TypeScript", "Tailwind CSS", "Django", "PostgreSQL"]}
+              image="/images/business-manager.png?height=400&width=600"
+              demoUrl="#"
+              repoUrl="https://github.com/rubanga-kene/business-manager-frontend.git"
+            />
+            <ProjectCard
               title="DevsHub"
               description="An online platform where devlopers share matters on topics of common interest."
               tags={[
@@ -290,23 +299,16 @@ export default function Portfolio() {
                 "PostgreSQL",
               ]}
               image="/images/devshub.png?height=400&width=600"
-              demoUrl="https://devshub.up.railway.app/"
+              demoUrl="#"
               repoUrl="https://github.com/rubanga-kene/devshub.git"
             />
-            <ProjectCard
-              title="Student Support Application"
-              description="An online platform where students can obtain support from the different university departments."
-              tags={["Flutter", "Dart", "Firebase"]}
-              image="/images/support-app.png?height=400&width=600"
-              demoUrl="#"
-              repoUrl="https://github.com/rubanga-kene/student-support-app.git"
-            />
+            
             <ProjectCard
               title="Student Assessment System"
               description="A platform that schools can use to assess the performance of their students, make report cards among others."
               tags={["HTML", "CSS", "JavaScript", "PHP", "MySQL"]}
               image="/images/student-report.png?height=400&width=600"
-              demoUrl="https://student-report.great-site.net/"
+              demoUrl="#"
               repoUrl="https://github.com/rubanga-kene/Assessment-Reports-Mgt-System.git"
             />
 
@@ -315,7 +317,7 @@ export default function Portfolio() {
               description="A beautiful website for dealflow company for several business purposes."
               tags={["React", "NextJS", "TypeScript", "Tailwind CSS"]}
               image="/images/dealflow.png?height=400&width=600"
-              demoUrl="https://dealflow-website.netlify.app/"
+              demoUrl="https://dealflowsdr.com/"
               repoUrl="#"
             />
             <ProjectCard
@@ -325,6 +327,14 @@ export default function Portfolio() {
               image="/images/portfolio.png?height=400&width=600"
               demoUrl="#"
               repoUrl="https://github.com/rubanga-kene/personal-portfolio.git"
+            />
+            <ProjectCard
+              title="Student Support Application"
+              description="An online platform where students can obtain support from the different university departments."
+              tags={["Flutter", "Dart", "Firebase"]}
+              image="/images/support-app.png?height=400&width=600"
+              demoUrl="#"
+              repoUrl="https://github.com/rubanga-kene/student-support-app.git"
             />
             <ProjectCard
               title="Information Sharing System"
