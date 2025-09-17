@@ -5,6 +5,13 @@ import { useMobile } from "../hooks/use-mobile"
 
 const experiences = [
   {
+    title: "Full Stack Developer",
+    company: "Sakkonet Technologies Ltd",
+    period: "August 2025",
+    description:
+      "Worked on several in house software systems using PHP, jQuery, MySQL, HMTL and Bootstrap",
+  },
+  {
     title: "Industrial Trainee",
     company: "Research and Education Network for Uganda, RENU",
     period: "June - August, 2024",

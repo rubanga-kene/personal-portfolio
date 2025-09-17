@@ -6,7 +6,7 @@ import { Button } from "../components/ui/button";
 import { ProjectCard } from "@/components/project-card";
 import { SkillBadge } from "@/components/skill-badge";
 import { Timeline } from "@/components/timeline";
-import { Education } from "@/components/education";
+import { Education } from "@/components/Education";
 import { ContactForm } from "../components/contact-form";
 // import { CreativeHero } from "@/components/creative-hero";
 import { FloatingNav } from "@/components/floating-nav";
@@ -14,6 +14,7 @@ import { ScrollProgress } from "@/components/scroll-progress";
 import { SectionHeading } from "@/components/section-heading";
 import { GlassmorphicCard } from "@/components/glassmorphic-card";
 import TerminalAnimation from "@/components/terminal-animation";
+import WebsitesSection from "@/components/WebsitesSection"
 
 
 export default function Portfolio() {
@@ -250,17 +251,17 @@ export default function Portfolio() {
           />
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-16">
-            <SkillBadge level={80} iconPath="/icons/python.svg" />
-            <SkillBadge level={75} iconPath="/icons/django.svg" />
-            <SkillBadge level={80} iconPath="/icons/react.svg" />
-            <SkillBadge level={80} iconPath="/icons/nextjs.svg" />
-            <SkillBadge level={80} iconPath="/icons/js.svg" />
-            <SkillBadge level={80} iconPath="/icons/tailwind.svg" />
+            <SkillBadge level={85} iconPath="/icons/python.svg" />
+            <SkillBadge level={80} iconPath="/icons/django.svg" />
+            <SkillBadge level={85} iconPath="/icons/react.svg" />
+            <SkillBadge level={85} iconPath="/icons/nextjs.svg" />
+            <SkillBadge level={90} iconPath="/icons/js.svg" />
+            <SkillBadge level={95} iconPath="/icons/tailwind.svg" />
             <SkillBadge level={85} iconPath="/icons/php.svg" />
-            <SkillBadge level={85} iconPath="/icons/mysql.svg" />
+            <SkillBadge level={90} iconPath="/icons/mysql.svg" />
             <SkillBadge level={80} iconPath="/icons/mongodb.svg" />
-            <SkillBadge level={80} iconPath="/icons/wordpress.svg" />
-            <SkillBadge level={80} iconPath="/icons/git.svg" />
+            <SkillBadge level={90} iconPath="/icons/wordpress.svg" />
+            <SkillBadge level={85} iconPath="/icons/git.svg" />
           </div>
         </div>
       </section>
@@ -272,7 +273,7 @@ export default function Portfolio() {
           <div className="absolute bottom-1/3 right-1/4 w-64 h-64 bg-yellow-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
         </div>
 
-        <div className="container relative z-10">
+        <div className=" relative z-10">
           <SectionHeading
             title="Featured Projects"
             subtitle="Some of My Recent Work"
@@ -347,6 +348,9 @@ export default function Portfolio() {
           </div>
         </div>
       </section>
+
+      {/* Websites Section */}
+      <WebsitesSection />
 
       {/* Experience Section */}
       <section id="experience" className="py-32 relative">
