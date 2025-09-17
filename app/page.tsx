@@ -6,7 +6,7 @@ import { Button } from "../components/ui/button";
 import { ProjectCard } from "@/components/project-card";
 import { SkillBadge } from "@/components/skill-badge";
 import { Timeline } from "@/components/timeline";
-import  Education  from "@/components/Education";
+import  Education  from "@/components/education";
 import { ContactForm } from "../components/contact-form";
 import { FloatingNav } from "@/components/floating-nav";
 import { ScrollProgress } from "@/components/scroll-progress";
