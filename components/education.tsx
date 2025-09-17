@@ -28,7 +28,7 @@ const academicAchievements = [
 
 ]
 
-export function Education() {
+export default function Education() {
   const isMobile = useMobile()
 
   return (
