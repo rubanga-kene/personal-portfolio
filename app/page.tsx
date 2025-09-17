@@ -8,7 +8,6 @@ import { SkillBadge } from "@/components/skill-badge";
 import { Timeline } from "@/components/timeline";
 import { Education } from "@/components/Education";
 import { ContactForm } from "../components/contact-form";
-// import { CreativeHero } from "@/components/creative-hero";
 import { FloatingNav } from "@/components/floating-nav";
 import { ScrollProgress } from "@/components/scroll-progress";
 import { SectionHeading } from "@/components/section-heading";
