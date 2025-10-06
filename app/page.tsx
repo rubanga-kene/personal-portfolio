@@ -45,7 +45,7 @@ export default function Portfolio() {
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
               <span className="block">Hi, I&apos;m</span>
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">
-                Solomon Rubanga Kene
+                Solomon <br/>Rubanga Kene
               </span>
             </h1>
             <p className="text-xl text-white-400 max-w-[600px]">

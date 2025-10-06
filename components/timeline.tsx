@@ -12,6 +12,13 @@ const experiences = [
       "Worked on several in house software systems using PHP, jQuery, MySQL, HMTL and Bootstrap",
   },
   {
+    title: "Operation of an e-Learning Hub",
+    company: "Busitema University",
+    period: "2024 - May, 2025",
+    description:
+      "Gained handson experience in the recording of lecture sessions, video editing, Learning Management System Administration, and provided technical support to Students",
+  },
+  {
     title: "Industrial Trainee",
     company: "Research and Education Network for Uganda, RENU",
     period: "June - August, 2024",
