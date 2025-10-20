@@ -302,6 +302,14 @@ export default function Portfolio() {
               demoUrl="#"
               repoUrl="https://github.com/rubanga-kene/devshub.git"
             />
+            <ProjectCard
+              title="Student Support Application"
+              description="An online platform where students can obtain support from the different university departments."
+              tags={["Flutter", "Dart", "Firebase"]}
+              image="/images/support-app.png?height=400&width=600"
+              demoUrl="#"
+              repoUrl="https://github.com/rubanga-kene/student-support-app.git"
+            />
             
             <ProjectCard
               title="Student Assessment System"
@@ -328,22 +336,15 @@ export default function Portfolio() {
               demoUrl="#"
               repoUrl="https://github.com/rubanga-kene/personal-portfolio.git"
             />
-            <ProjectCard
-              title="Student Support Application"
-              description="An online platform where students can obtain support from the different university departments."
-              tags={["Flutter", "Dart", "Firebase"]}
-              image="/images/support-app.png?height=400&width=600"
-              demoUrl="#"
-              repoUrl="https://github.com/rubanga-kene/student-support-app.git"
-            />
-            <ProjectCard
+            
+            {/* <ProjectCard
               title="Information Sharing System"
               description="An information sharing platform for the IEEE students Community of Busitema University"
               tags={["HTML", "CSS", "JavaScript", "PHP", "MySQL"]}
               image="/images/ieee.png?height=400&width=600"
               demoUrl="#"
               repoUrl="https://github.com/rubanga-kene/Infromation-Sharing-System.git"
-            />
+            /> */}
           </div>
         </div>
       </section>
