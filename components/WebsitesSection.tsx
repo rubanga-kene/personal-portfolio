@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { SectionHeading } from "./section-heading";
-import { Button } from "./ui/button";
-import { ArrowRight, RocketIcon } from "lucide-react";
+// import { Button } from "./ui/button";
+import { RocketIcon } from "lucide-react";
 
 export default function WebsitesSection() {
   return (
