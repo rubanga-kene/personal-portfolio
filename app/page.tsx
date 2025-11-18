@@ -37,7 +37,7 @@ export default function Portfolio() {
             <div className="inline-block">
               <div className="relative px-3 py-1 text-sm font-medium rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-4">
                 <span className="relative z-10">
-                  Software Developer And Creative Inovator
+                  Software Developer And Creative Innovator
                 </span>
                 <span className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 animate-pulse"></span>
               </div>
@@ -85,39 +85,82 @@ export default function Portfolio() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
+                <div className="relative group">
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="rounded-full bg-zinc-600/50 hover:bg-zinc-800 text-zinc-400 hover:text-white"
+                  className="rounded-full cursor-pointer bg-zinc-600/50 hover:bg-zinc-800 
+                  text-zinc-400 hover:text-white"
                 >
                   <Github className="h-5 w-5" />
                   <span className="sr-only">GitHub</span>
                 </Button>
+
+                {/* Tooltip */}
+                <span
+                  className="absolute text-zinc-900 -top-12 left-1/2 -translate-x-1/2
+                  scale-0 group-hover:scale-100
+                  transition-all duration-200
+                  px-3 py-1 rounded-md border border-gray-300 
+                  bg-white text-sm font-semibold shadow-md"
+                >
+                  GitHub
+                </span>
+              </div>
+
               </Link>
               <Link
                 href="https://www.linkedin.com/in/rubangakenesolomon/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
+                <div className="relative group">
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="rounded-full bg-zinc-600/50 hover:bg-zinc-800 text-zinc-400 hover:text-white"
+                  className="rounded-full cursor-pointer bg-zinc-600/50 hover:bg-zinc-800 
+                  text-zinc-400 hover:text-white"
                 >
                   <Linkedin className="h-5 w-5" />
                   <span className="sr-only">LinkedIn</span>
                 </Button>
+
+                {/* Tooltip */}
+                <span
+                  className="absolute text-zinc-900 -top-12 left-1/2 -translate-x-1/2
+                  scale-0 group-hover:scale-100
+                  transition-all duration-200
+                  px-3 py-1 rounded-md border border-gray-300 
+                  bg-white text-sm font-semibold shadow-md"
+                >
+                  LinkedIn
+                </span>
+              </div>
               </Link>
               
               <Link href="mailto:rubangakene20@gmail.com">
+              <div className="relative group">
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="rounded-full bg-zinc-600/50 hover:bg-zinc-800 text-zinc-400 hover:text-white"
+                  className="rounded-full cursor-pointer bg-zinc-600/50 hover:bg-zinc-800 
+                  text-zinc-400 hover:text-white"
                 >
                   <Mail className="h-5 w-5" />
                   <span className="sr-only">Email</span>
                 </Button>
+
+                {/* Tooltip */}
+                <span
+                  className="absolute text-zinc-900 -top-12 left-1/2 -translate-x-1/2
+                  scale-0 group-hover:scale-100
+                  transition-all duration-200
+                  px-3 py-1 rounded-md border border-gray-300 
+                  bg-white text-sm font-semibold shadow-md"
+                >
+                  Email
+                </span>
+              </div>
               </Link>
             </div>
           </div>
