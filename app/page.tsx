@@ -14,6 +14,8 @@ import { SectionHeading } from "@/components/section-heading";
 import { GlassmorphicCard } from "@/components/glassmorphic-card";
 import TerminalAnimation from "@/components/terminal-animation";
 import WebsitesSection from "@/components/WebsitesSection"
+// import AnimatedRings from "@/components/AnimatedRings";
+
 
 
 export default function Portfolio() {
@@ -179,6 +181,8 @@ export default function Portfolio() {
               { degree: "B.Sc. Computer Science", institution: "Busitema University", year: "2022-2025" },
             ]}
           />
+          {/* <AnimatedRings /> */}
+
             {/* <CreativeHero /> */}
           </div>
         </div>
@@ -543,47 +547,90 @@ export default function Portfolio() {
               reserved.
             </p>
           </div>
-          <div className="flex gap-4">
-            <Link
-              href="https://github.com/rubanga-kene"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Button
-                variant="ghost"
-                size="icon"
-                className="rounded-full bg-zinc-800/50 hover:bg-zinc-800 text-zinc-400 hover:text-white"
+            <div className="flex gap-4 pt-4">
+              <Link
+                href="https://github.com/rubanga-kene"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <Github className="h-5 w-5" />
-                <span className="sr-only">GitHub</span>
-              </Button>
-            </Link>
-            <Link
-              href="https://www.linkedin.com/in/rubangakenesolomon/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Button
-                variant="ghost"
-                size="icon"
-                className="rounded-full bg-zinc-800/50 hover:bg-zinc-800 text-zinc-400 hover:text-white"
+                <div className="relative group">
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="rounded-full cursor-pointer bg-zinc-600/50 hover:bg-zinc-800 
+                  text-zinc-400 hover:text-white"
+                >
+                  <Github className="h-5 w-5" />
+                  <span className="sr-only">GitHub</span>
+                </Button>
+
+                {/* Tooltip */}
+                <span
+                  className="absolute text-zinc-900 -top-12 left-1/2 -translate-x-1/2
+                  scale-0 group-hover:scale-100
+                  transition-all duration-200
+                  px-3 py-1 rounded-md border border-gray-300 
+                  bg-white text-sm font-semibold shadow-md"
+                >
+                  GitHub
+                </span>
+              </div>
+
+              </Link>
+              <Link
+                href="https://www.linkedin.com/in/rubangakenesolomon/"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <Linkedin className="h-5 w-5" />
-                <span className="sr-only">LinkedIn</span>
-              </Button>
-            </Link>
-            
-            <Link href="mailto:rubangakene20@gmail.com">
-              <Button
-                variant="ghost"
-                size="icon"
-                className="rounded-full bg-zinc-800/50 hover:bg-zinc-800 text-zinc-400 hover:text-white"
-              >
-                <Mail className="h-5 w-5" />
-                <span className="sr-only">Email</span>
-              </Button>
-            </Link>
-          </div>
+                <div className="relative group">
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="rounded-full cursor-pointer bg-zinc-600/50 hover:bg-zinc-800 
+                  text-zinc-400 hover:text-white"
+                >
+                  <Linkedin className="h-5 w-5" />
+                  <span className="sr-only">LinkedIn</span>
+                </Button>
+
+                {/* Tooltip */}
+                <span
+                  className="absolute text-zinc-900 -top-12 left-1/2 -translate-x-1/2
+                  scale-0 group-hover:scale-100
+                  transition-all duration-200
+                  px-3 py-1 rounded-md border border-gray-300 
+                  bg-white text-sm font-semibold shadow-md"
+                >
+                  LinkedIn
+                </span>
+              </div>
+              </Link>
+              
+              <Link href="mailto:rubangakene20@gmail.com">
+              <div className="relative group">
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="rounded-full cursor-pointer bg-zinc-600/50 hover:bg-zinc-800 
+                  text-zinc-400 hover:text-white"
+                >
+                  <Mail className="h-5 w-5" />
+                  <span className="sr-only">Email</span>
+                </Button>
+
+                {/* Tooltip */}
+                <span
+                  className="absolute text-zinc-900 -top-12 left-1/2 -translate-x-1/2
+                  scale-0 group-hover:scale-100
+                  transition-all duration-200
+                  px-3 py-1 rounded-md border border-gray-300 
+                  bg-white text-sm font-semibold shadow-md"
+                >
+                  Email
+                </span>
+              </div>
+              </Link>
+            </div>
         </div>
       </footer>
     </div>

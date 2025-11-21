@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState, useRef } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 
 interface TerminalLine {
@@ -21,314 +21,253 @@ interface TerminalAnimationProps {
   aboutMe?: string
   hobbies?: string[]
   education?: { degree: string; institution: string; year: string }[]
+  height?: string | number
 }
 
-export default function TerminalAnimation({
+export default function HackerTerminal({
   name = "",
   title = "",
   location = "",
   skills = [],
   github = "",
   email = "",
-  aboutMe = " ",
+  aboutMe = "",
   hobbies = [],
   education = [
     { degree: "", institution: "", year: "" },
-    { degree: " ", institution: "", year: "" },
   ],
+  height = 500,
 }: TerminalAnimationProps) {
-  const [hasMounted, setHasMounted] = useState(false)
-  const [currentLineIndex, setCurrentLineIndex] = useState(0)
-  const [currentChar, setCurrentChar] = useState(0)
-  const [showCursor, setShowCursor] = useState(true)
-  const [isComplete, setIsComplete] = useState(false)
-  const [linesToDisplay, setLinesToDisplay] = useState<TerminalLine[]>([])
-  const [currentTime, setCurrentTime] = useState("")
-  const terminalRef = useRef<HTMLDivElement>(null)
-  const contentRef = useRef<HTMLDivElement>(null)
+  const [mounted, setMounted] = useState(false)
+  const [lines, setLines] = useState<TerminalLine[]>([])
+  const [index, setIndex] = useState(0)
+  const [charIndex, setCharIndex] = useState(0)
+  const [cursorOn, setCursorOn] = useState(true)
+  const [complete, setComplete] = useState(false)
+  const terminalRef = useRef<HTMLDivElement | null>(null)
+  const contentRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
-    setHasMounted(true)
-    setCurrentTime(new Date().toLocaleTimeString())
+    setMounted(true)
 
-    const today = new Date()
-    const dateString = today.toLocaleDateString()
-    const timeString = today.toLocaleTimeString()
+    const now = new Date()
+    const dateString = now.toLocaleDateString()
+    const timeString = now.toLocaleTimeString()
 
-    const generatedLines: TerminalLine[] = [
-      {
-        id: 1,
-        type: "system",
-        content: `Last login: ${dateString} ${timeString}`,
-        delay: 500,
-      },
-      { id: 2, type: "command", content: "$ whoami", delay: 1000, typingSpeed: 100 },
-      { id: 3, type: "output", content: name, delay: 200 },
-      { id: 4, type: "command", content: "$ about me", delay: 1500, typingSpeed: 80 },
-      { id: 5, type: "output", content: aboutMe, delay: 500 },
-      { id: 6, type: "command", content: "$ contact me on", delay: 1200, typingSpeed: 90 },
-      { id: 7, type: "output", content: `Title: ${title}`, delay: 300 },
-      { id: 8, type: "output", content: `Location: ${location}`, delay: 200 },
-      { id: 9, type: "output", content: `Email: ${email}`, delay: 200 },
-      { id: 10, type: "output", content: `GitHub: ${github}`, delay: 200 },
-      { id: 11, type: "command", content: "$ skills", delay: 1800, typingSpeed: 85 },
-      ...skills.map((skill, index) => ({
-        id: 12 + index,
-        type: "output" as const,
-        content: `- ${skill}`,
-        delay: 150,
-      })),
-      { id: 12 + skills.length, type: "command", content: "$ hobbies", delay: 1500, typingSpeed: 95 },
-      ...hobbies.map((hobby, index) => ({
-        id: 13 + skills.length + index,
-        type: "output" as const,
-        content: `- ${hobby}`,
-        delay: 200,
-      })),
-      {
-        id: 13 + skills.length + hobbies.length,
-        type: "command",
-        content: "$ education",
-        delay: 1500,
-        typingSpeed: 95,
-      },
-      ...education.map((edu, index) => ({
-        id: 14 + skills.length + hobbies.length + index,
-        type: "output" as const,
-        content: `- ${edu.degree} from ${edu.institution} (${edu.year})`,
-        delay: 200,
-      })),
-      {
-        id: 14 + skills.length + hobbies.length + education.length,
-        type: "command",
-        content: "$ echo 'Profile loaded successfully! ✨'",
-        delay: 2200,
-        typingSpeed: 70,
-      },
-      {
-        id: 15 + skills.length + hobbies.length + education.length,
-        type: "output",
-        content: "Profile loaded successfully! ✨",
-        delay: 400,
-      },
-      {
-        id: 16 + skills.length + hobbies.length + education.length,
-        type: "command",
-        content: "$ ",
-        delay: 1500,
-        typingSpeed: 0,
-      },
+    const generated: TerminalLine[] = [
+      { id: 1, type: "system", content: `Last login: ${dateString} ${timeString}`, delay: 600 },
+      { id: 2, type: "command", content: "$ whoami", delay: 800, typingSpeed: 80 },
+      { id: 3, type: "output", content: name || "visitor", delay: 300 },
+      { id: 4, type: "command", content: "$ about me", delay: 1000, typingSpeed: 70 },
+      { id: 5, type: "output", content: aboutMe || "--", delay: 400 },
+      { id: 6, type: "command", content: "$ contact", delay: 900, typingSpeed: 80 },
+      { id: 7, type: "output", content: `Title: ${title}` , delay: 250},
+      { id: 8, type: "output", content: `Location: ${location}` , delay: 250},
+      { id: 9, type: "output", content: `Email: ${email}` , delay: 250},
+      { id: 10, type: "output", content: `GitHub: ${github}` , delay: 250},
+      { id: 11, type: "command", content: "$ skills", delay: 1100, typingSpeed: 75 },
+      ...skills.map((s, i) => ({ id: 100 + i, type: "output" as const, content: `- ${s}`, delay: 120 })),
+      { id: 200, type: "command", content: "$ hobbies", delay: 900, typingSpeed: 85 },
+      ...hobbies.map((h, i) => ({ id: 300 + i, type: "output" as const, content: `- ${h}`, delay: 150 })),
+      { id: 400, type: "command", content: "$ education", delay: 900, typingSpeed: 85 },
+      ...education.map((e, i) => ({ id: 500 + i, type: "output" as const, content: `- ${e.degree} from ${e.institution} (${e.year})`, delay: 180 })),
+      { id: 600, type: "command", content: "$ echo 'Profile loaded'", delay: 1200, typingSpeed: 70 },
+      { id: 700, type: "output", content: "Profile loaded — ✨", delay: 400 },
+      { id: 800, type: "command", content: "$ ", delay: 900, typingSpeed: 0 },
     ]
-    setLinesToDisplay(generatedLines)
-  }, [name, title, location, skills, github, email, aboutMe, hobbies, education])
 
-  useEffect(() => {
-    if (terminalRef.current && contentRef.current) {
-      const terminal = terminalRef.current
-      const content = contentRef.current
-      terminal.scrollTo({
-        top: content.scrollHeight - terminal.clientHeight,
-        behavior: "smooth",
-      })
-    }
-  }, [currentLineIndex, currentChar, linesToDisplay])
+    setLines(generated)
+  }, [name, title, aboutMe, skills, hobbies, education, github, email, location])
 
+  // typing & line progression
   useEffect(() => {
-    const cursorInterval = setInterval(() => {
-      setShowCursor((prev) => !prev)
-    }, 500)
-    return () => clearInterval(cursorInterval)
-  }, [])
-
-  useEffect(() => {
-    if (linesToDisplay.length === 0) return
-    if (currentLineIndex >= linesToDisplay.length) {
-      setIsComplete(true)
+    if (!lines.length) return
+    if (index >= lines.length) {
+      setComplete(true)
       return
     }
 
-    const currentLine = linesToDisplay[currentLineIndex]
-    const isTypingLine = currentLine.type === "command" && currentLine.typingSpeed !== 0
+    const current = lines[index]
+    const isTyping = current.type === "command" && (current.typingSpeed ?? 0) > 0
 
-    if (isTypingLine) {
-      if (currentChar < currentLine.content.length) {
-        const timeout = setTimeout(() => {
-          setCurrentChar((prev) => prev + 1)
-        }, currentLine.typingSpeed || 100)
-        return () => clearTimeout(timeout)
+    if (isTyping) {
+      if (charIndex < current.content.length) {
+        const t = setTimeout(() => setCharIndex((c) => c + 1), current.typingSpeed ?? 80)
+        return () => clearTimeout(t)
       } else {
-        const timeout = setTimeout(() => {
-          setCurrentLineIndex((prev) => prev + 1)
-          setCurrentChar(0)
-        }, currentLine.delay)
-        return () => clearTimeout(timeout)
+        const t = setTimeout(() => {
+          setIndex((i) => i + 1)
+          setCharIndex(0)
+        }, current.delay)
+        return () => clearTimeout(t)
       }
     } else {
-      const timeout = setTimeout(() => {
-        setCurrentLineIndex((prev) => prev + 1)
-        setCurrentChar(0)
-      }, currentLine.delay)
-      return () => clearTimeout(timeout)
+      const t = setTimeout(() => {
+        setIndex((i) => i + 1)
+        setCharIndex(0)
+      }, current.delay)
+      return () => clearTimeout(t)
     }
-  }, [currentLineIndex, currentChar, linesToDisplay])
+  }, [index, charIndex, lines])
 
-  const getLineColor = (type: string) => {
+  // cursor blink
+  useEffect(() => {
+    const id = setInterval(() => setCursorOn((s) => !s), 530)
+    return () => clearInterval(id)
+  }, [])
+
+  // auto scroll
+  useEffect(() => {
+    if (!terminalRef.current || !contentRef.current) return
+    const el = terminalRef.current
+    const content = contentRef.current
+    el.scrollTo({ top: content.scrollHeight, behavior: "smooth" })
+  }, [index, charIndex, lines])
+
+  const colorForType = (type: string) => {
     switch (type) {
       case "command":
-        return "text-green-400"
+        return "text-neon-green"
       case "output":
-        return "text-gray-300"
+        return "text-slate-300"
       case "error":
         return "text-red-400"
       case "system":
-        return "text-blue-400"
+        return "text-neon-blue"
       case "comment":
-        return "text-gray-500"
+        return "text-slate-500"
       default:
-        return "text-gray-300"
+        return "text-slate-300"
     }
   }
 
-  const getPrompt = (type: string) => {
-    switch (type) {
-      case "command":
-        return ""
-      case "system":
-        return "→ "
-      default:
-        return ""
-    }
-  }
+  const promptFor = (type: string) => (type === "command" ? "$" : type === "system" ? "→" : "")
 
-  if (!hasMounted) return null
+  if (!mounted) return null
 
   return (
-    <div className="relative w-full max-w-3xl h-[500px] bg-black rounded-lg shadow-2xl overflow-hidden font-mono border border-gray-700">
-      <div className="bg-gray-800 px-4 py-2 flex items-center justify-between border-b border-gray-700">
-        <div className="flex items-center space-x-2">
-          <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-          <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-          <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-        </div>
-        <div className="text-gray-400 text-sm">Terminal — solomon</div>
-        <div className="w-16"></div>
-      </div>
-
-      <div
-        ref={terminalRef}
-        className="p-6 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-800"
-        style={{ height: "calc(100% - 36px)" }}
-      >
-        <div ref={contentRef} className="space-y-1 min-h-full">
-          {linesToDisplay.slice(0, currentLineIndex + 1).map((line, index) => {
-            const isCurrentLine = index === currentLineIndex
-            const isTypingLine = line.type === "command" && line.typingSpeed !== 0
-            const displayContent = isCurrentLine && isTypingLine ? line.content.slice(0, currentChar) : line.content
-
-            return (
-              <motion.div
-                key={line.id}
-                className={`${getLineColor(line.type)} flex items-start`}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.1 }}
-              >
-                <span className="text-gray-500 mr-2">{getPrompt(line.type)}</span>
-                <span className="flex-1">
-                  {displayContent}
-                  {isCurrentLine && isTypingLine && showCursor && (
-                    <motion.span
-                      className="bg-green-400 text-black px-1"
-                      animate={{ opacity: [1, 0] }}
-                      transition={{ duration: 0.5, repeat: Infinity }}
-                    >
-                      _
-                    </motion.span>
-                  )}
-                </span>
-              </motion.div>
-            )
-          })}
-
-          {isComplete && (
-            <motion.div className="text-green-400 flex items-center">
-              <span className="text-gray-500 mr-2"></span>
-              <span>$ </span>
-              {showCursor && (
-                <motion.span
-                  className="bg-green-400 text-black px-1 ml-1"
-                  animate={{ opacity: [1, 1, 0] }}
-                  transition={{ duration: 0.5, repeat: Infinity, repeatDelay: 0.5 }}
-                >
-                  _
-                </motion.span>
-              )}
-            </motion.div>
-          )}
-
-          <AnimatePresence>
-            {isComplete && (
-              <motion.div
-                className="mt-8 text-green-400 text-xs leading-tight"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 2, duration: 1 }}
-              >
-                <pre>{`
-╔══════════════════════════════════════╗
-║                                      ║
-║         PROFILE LOADED               ║
-║                                      ║
-║    Explore my journey and passions   ║
-║                                      ║
-╚══════════════════════════════════════╝
-                `}</pre>
-              </motion.div>
-            )}
-          </AnimatePresence>
+    <div className="relative w-full max-w-4xl rounded-xl overflow-hidden font-mono" style={{ height }}>
+      {/* MATRIX RAIN LAYER */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="matrix-wrap w-full h-full">
+          {Array.from({ length: 28 }).map((_, i) => (
+            <div key={i} className="matrix-col" style={{ left: `${(i / 28) * 100}%` }}>
+              {Array.from({ length: 40 }).map((__, j) => (
+                <span key={j} className="matrix-char">{String.fromCharCode(0x30 + Math.floor(Math.random() * 50))}</span>
+              ))}
+            </div>
+          ))}
         </div>
       </div>
 
-      {hasMounted && (
-        <>
-          <div className="absolute inset-0 pointer-events-none opacity-5">
-            {Array.from({ length: 50 }).map((_, i) => (
-              <motion.div
-                key={i}
-                className="absolute text-green-400 text-xs"
-                style={{
-                  left: `${Math.random() * 100}%`,
-                  top: `${Math.random() * 100}%`,
-                }}
-                animate={{ opacity: [0, 1, 0], y: [0, 20, 0] }}
-                transition={{
-                  duration: 3 + Math.random() * 2,
-                  repeat: Infinity,
-                  delay: Math.random() * 5,
-                }}
-              >
-                {Math.random().toString(36).charAt(0)}
-              </motion.div>
-            ))}
+      {/* Terminal shell */}
+      <div className="relative z-20 h-full bg-gradient-to-b from-[#041014] to-[#020205] border border-[#083a08] shadow-[0_10px_30px_rgba(0,0,0,0.6)] rounded-xl overflow-hidden">
+        {/* header */}
+        <div className="flex items-center justify-between px-4 py-2 bg-black/40 border-b border-[#073007]">
+          <div className="flex items-center gap-2">
+            <div className="w-3 h-3 rounded-full bg-[#ff5f57] shadow-[0_0_8px_rgba(255,95,87,0.2)]"></div>
+            <div className="w-3 h-3 rounded-full bg-[#febc2e] shadow-[0_0_8px_rgba(254,188,46,0.15)]"></div>
+            <div className="w-3 h-3 rounded-full bg-[#28ca41] shadow-[0_0_8px_rgba(40,202,65,0.2)]"></div>
           </div>
 
-          <motion.div
-            className="absolute inset-0 pointer-events-none bg-green-400 mix-blend-multiply"
-            animate={{ opacity: [0, 0.02, 0] }}
-            transition={{
-              duration: 0.1,
-              repeat: Infinity,
-              repeatDelay: Math.random() * 10,
-            }}
-          />
-        </>
-      )}
+          <div className="text-sm text-slate-300/80">Terminal — {name || "guest"}</div>
 
-      <div className="absolute bottom-0 left-0 right-0 bg-gray-800 px-4 py-1 text-xs text-gray-400 border-t border-gray-700">
-        <div className="flex justify-between">
-          <span>{currentTime}</span>
+          <div className="flex items-center gap-2 text-xs text-slate-400">
+            <span className="px-2 py-0.5 rounded bg-black/20 border border-[#083a08]">SSH</span>
+            <span className="px-2 py-0.5 rounded bg-black/20 border border-[#083a08]">v1.2</span>
+          </div>
+        </div>
+
+        {/* content area */}
+        <div ref={terminalRef} className="p-6 overflow-auto h-[calc(100%-72px)]">
+          <div ref={contentRef} className="space-y-1 text-sm">
+            {lines.slice(0, index + 1).map((line, i) => {
+              const isCurrent = i === index
+              const isTyping = line.type === "command" && (line.typingSpeed ?? 0) > 0
+              const text = isCurrent && isTyping ? line.content.slice(0, charIndex) : line.content
+
+              return (
+                <motion.div
+                  key={line.id}
+                  initial={{ opacity: 0, y: 4 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.16 }}
+                  className={`flex items-start gap-3 ${colorForType(line.type)}`}
+                >
+                  <div className="text-slate-500/80 w-6 mt-0.5">{promptFor(line.type)}</div>
+                  <div className="flex-1 leading-tight break-words whitespace-pre-wrap">{text}{isCurrent && isTyping && cursorOn && (
+                    <motion.span className="inline-block ml-1 w-2 h-4 rounded-sm bg-neon-green text-black" animate={{ opacity: [1, 0] }} transition={{ duration: 0.45, repeat: Infinity }}>
+                      &nbsp;
+                    </motion.span>
+                  )}</div>
+                </motion.div>
+              )
+            })}
+
+            {complete && (
+              <div className="mt-6 text-neon-green text-sm">
+                <pre className="whitespace-pre-wrap text-sm leading-snug">{
+`╔════════════════════════════════════╗
+║           PROFILE LOADED            ║
+║   Welcome — explore my work & code  ║
+╚════════════════════════════════════╝`
+                }</pre>
+              </div>
+            )}
+
+            {/* idle prompt */}
+            {complete && (
+              <div className="mt-4 text-neon-green flex items-center gap-2">
+                <div className="text-slate-500/80 w-6">$</div>
+                <div className="flex-1">{cursorOn ? <span className="inline-block w-2 h-4 rounded-sm bg-neon-green" /> : <span className="inline-block w-2 h-4" />}</div>
+              </div>
+            )}
+          </div>
+        </div>
+
+        {/* footer */}
+        <div className="px-4 py-2 bg-black/30 border-t border-[#073007] text-xs text-slate-400 flex justify-between">
+          <div>connected</div>
+          <div>{new Date().toLocaleTimeString()}</div>
         </div>
       </div>
+
+      {/* decorative overlays */}
+      <div className="absolute inset-0 z-30 pointer-events-none">
+        <div className="scanline" />
+        <div className="vignette" />
+      </div>
+
+      {/* styles */}
+      <style>{`
+        :root{
+          --neon: #39ff14;
+          --neon-2: #22e06a;
+          --neon-blue: #66d9ff;
+        }
+
+        .text-neon-green{ color: var(--neon); text-shadow: 0 0 8px rgba(57,255,20,0.12), 0 0 18px rgba(57,255,20,0.06); }
+        .bg-neon-green{ background: var(--neon); }
+        .text-neon-blue{ color: var(--neon-blue); text-shadow: 0 0 8px rgba(102,217,255,0.09); }
+
+        /* MATRIX RAIN */
+        .matrix-wrap{ position:absolute; inset:0; overflow:hidden; z-index:10; mix-blend-mode:screen; opacity:0.06 }
+        .matrix-col{ position:absolute; top:-10%; width:3.5%; font-size:12px; display:flex; flex-direction:column; gap:2px; align-items:flex-start; animation:colFall 9s linear infinite; }
+        .matrix-col:nth-child(odd){ animation-duration:10s }
+        .matrix-char{ display:block; transform:translateY(0); user-select:none }
+        @keyframes colFall{ 0%{ transform:translateY(-120%) } 100%{ transform:translateY(120%) } }
+
+        /* scanline + vignette */
+        .scanline{ position:absolute; inset:0; background-image:linear-gradient(rgba(0,0,0,0) 49%, rgba(0,0,0,0.03) 50%, rgba(0,0,0,0) 51%); background-size:100% 6px; mix-blend-mode:overlay; opacity:0.35 }
+        .vignette{ position:absolute; inset:0; box-shadow:inset 0 120px 220px rgba(0,0,0,0.55); }
+
+        /* subtle flicker */
+        @keyframes flicker{ 0%{ opacity:1 } 50%{ opacity:0.96 } 100%{ opacity:1 } }
+        .matrix-wrap, .scanline{ animation: flicker 6s infinite }
+
+        /* responsive fixes */
+        @media (max-width:640px){ .matrix-col{ font-size:10px } }
+      `}</style>
     </div>
   )
 }

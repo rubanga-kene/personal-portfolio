@@ -1,5 +1,7 @@
+'use client'
 import Image from "next/image";
 import { SectionHeading } from "./section-heading";
+import AnimatedCard from "../components/AnimatedCard";
 // import { Button } from "./ui/button";
 import { RocketIcon } from "lucide-react";
 
@@ -58,13 +60,17 @@ export default function WebsitesSection() {
               </div>
               </a> 
             </div>
-            <Image
+            {/* <Image
               className="rounded-xl"
               src="/images/image-hero.jpg"
               alt="CTA photo"
               width={500}
               height={350}
-            />
+            /> */}
+
+                  <AnimatedCard />
+
+
           </div>
         </div>
       </div>
