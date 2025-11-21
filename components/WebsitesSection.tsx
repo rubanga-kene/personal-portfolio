@@ -1,5 +1,5 @@
 'use client'
-import Image from "next/image";
+// import Image from "next/image";
 import { SectionHeading } from "./section-heading";
 import AnimatedCard from "../components/AnimatedCard";
 // import { Button } from "./ui/button";
