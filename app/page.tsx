@@ -331,7 +331,7 @@ export default function Portfolio() {
               description="An online web application for automating day to day business activities such as inventory
               management, sales, reports and analytics"
               tags={["Next.js", "TypeScript", "Tailwind CSS", "Django", "PostgreSQL"]}
-              image="/images/business-manager.png?height=400&width=600"
+              image="/images/business-manager.png"
               demoUrl="#"
               repoUrl="https://github.com/rubanga-kene/business-manager-frontend.git"
             />
@@ -345,7 +345,7 @@ export default function Portfolio() {
                 "JavaScript",
                 "PostgreSQL",
               ]}
-              image="/images/devshub.png?height=400&width=600"
+              image="/images/devshub.png"
               demoUrl="#"
               repoUrl="https://github.com/rubanga-kene/devshub.git"
             />
@@ -353,7 +353,7 @@ export default function Portfolio() {
               title="Student Support Application"
               description="An online platform where students can obtain support from the different university departments."
               tags={["Flutter", "Dart", "Firebase"]}
-              image="/images/support-app.png?height=400&width=600"
+              image="/images/support-app.png"
               demoUrl="#"
               repoUrl="https://github.com/rubanga-kene/student-support-app.git"
             />
@@ -362,7 +362,7 @@ export default function Portfolio() {
               title="Student Assessment System"
               description="A platform that schools can use to assess the performance of their students, make report cards among others."
               tags={["HTML", "CSS", "JavaScript", "PHP", "MySQL"]}
-              image="/images/student-report.png?height=400&width=600"
+              image="/images/student-report.png"
               demoUrl="#"
               repoUrl="https://github.com/rubanga-kene/Assessment-Reports-Mgt-System.git"
             />
@@ -371,7 +371,7 @@ export default function Portfolio() {
               title="DealFlow Website"
               description="A beautiful website for dealflow company for several business purposes."
               tags={["React", "NextJS", "TypeScript", "Tailwind CSS"]}
-              image="/images/dealflow.png?height=400&width=600"
+              image="/images/dealflow.png"
               demoUrl="https://dealflowsdr.com/"
               repoUrl="#"
             />
@@ -379,19 +379,10 @@ export default function Portfolio() {
               title="My Portfolio Website"
               description="This portfolio website built with Next.js and Tailwind CSS."
               tags={["Next.js", "Tailwind CSS", "Framer Motion", "TypeScript"]}
-              image="/images/portfolio.png?height=400&width=600"
+              image="/images/portfolio.png"
               demoUrl="#"
               repoUrl="https://github.com/rubanga-kene/personal-portfolio.git"
             />
-            
-            {/* <ProjectCard
-              title="Information Sharing System"
-              description="An information sharing platform for the IEEE students Community of Busitema University"
-              tags={["HTML", "CSS", "JavaScript", "PHP", "MySQL"]}
-              image="/images/ieee.png?height=400&width=600"
-              demoUrl="#"
-              repoUrl="https://github.com/rubanga-kene/Infromation-Sharing-System.git"
-            /> */}
           </div>
         </div>
       </section>

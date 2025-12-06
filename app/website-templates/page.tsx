@@ -77,7 +77,7 @@ export default function Templates() {
               description="A versatile multipurpose template with a bold, modern design. 
               Great for businesses and organizations looking for a professional, 
               no-nonsense online presence."
-              image="/templates/solid-template.png?height=400&width=600"
+              image="/templates/solid-template.png"
               demoUrl="https://solomon-solid-template.vercel.app/"
             />
             <TemplateCard
@@ -85,14 +85,14 @@ export default function Templates() {
               description="A feature-rich portfolio template with sections for 
               projects, case studies, testimonials, and a contact form — perfect for creatives 
               and professionals who want to showcase their full body of work.."
-              image="/templates/portfolio-1.png?height=400&width=600"
+              image="/templates/portfolio-1.png"
               demoUrl="https://solomon-portfolio-1.vercel.app/"
             />
             <TemplateCard
               title="Startup Template"
               description="Crafted for new businesses and tech startups, this template highlights 
               your product or service with sections for features, pricing, testimonials, and calls to action."
-              image="/templates/startup-template.png?height=400&width=600"
+              image="/templates/startup-template.png"
               demoUrl="https://startup-template-alpha.vercel.app/"
             />
             <TemplateCard
@@ -100,7 +100,7 @@ export default function Templates() {
               description="Tailored for contractors and construction businesses, 
               this template includes service listings, project galleries, and request-a-quote 
               functionality to attract and convert clients."
-              image="/templates/construction-template.png?height=400&width=600"
+              image="/templates/construction-template.png"
               demoUrl="https://construction-services-template.vercel.app/"
             />
             <TemplateCard
@@ -108,7 +108,7 @@ export default function Templates() {
               description="An all-in-one template for service-based businesses. 
               It comes with service listings, team bios, contact forms, and strong CTAs 
               to help you generate leads effectively."
-              image="/templates/play-template.png?height=400&width=600"
+              image="/templates/play-template.png"
               demoUrl="https://solomon-play.vercel.app/"
             />
             <TemplateCard
@@ -116,7 +116,7 @@ export default function Templates() {
               description="A clean and lightweight design focused on simplicity 
               and elegance. Ideal for artists, freelancers, or designers who want 
               their work to take center stage without distractions.."
-              image="/templates/portfolio-2.png?height=400&width=600"
+              image="/templates/portfolio-2.png"
               demoUrl="https://solomon-portfolio-2.vercel.app/"
             />
           </div>
